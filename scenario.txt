@@ -1,1 +1,5 @@
 Senaryo :
+1- Artist(User) olsun,
+2- Bu userın şarkıları(Musics) olsun,
+3- Bide bu müziklerin albümü(Albums) olsun duruma göre
+ yeter işte 
