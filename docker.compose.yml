@@ -1,0 +1,20 @@
+version: '3'
+services:
+  neo4j:
+    image: neo4j:latest
+    container_name: neo4j_container
+    environment:
+      NEO4J_AUTH: neo4j/testpassword  # Burayı kendi kullanıcı adı ve şifreniz ile değiştirin
+    ports:
+      - "7474:7474" # HTTP portu
+      - "7687:7687" # Bolt portu
+    volumes:
+      - $HOME/neo4j/data:/data  # Veri klasörü
+      - $HOME/neo4j/logs:/logs  # Log klasörü
+      - $HOME/neo4j/import:/var/lib/neo4j/import  # İmport klasörü
+      - $HOME/neo4j/plugins:/plugins  # Plugin klasörü
+    healthcheck:
+      test: ["CMD", "cypher-shell", "-u", "neo4j", "-p", "testpassword", "RETURN 1;"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
