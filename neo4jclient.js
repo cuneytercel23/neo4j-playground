@@ -14,8 +14,11 @@ const driver = neo4j.driver(
 
 const session = driver.session();
 
+//Distinct eksik 
+
 //Not Get kısımını(nasıl get edildiğini -> result.records ile) getUserbyId kısımında açıkladım.
 // Müzik kısımda eğer albümid veya userId verilmemişse ilişki kurma diyorum
+//getUserrelatsihonshipli kısımda da müziklerle birlikte çekiyorum.
 
 //WITH İki aşama olduğunu düşün , diğer aşamaya veri geçişini sağlıyor olmasa da olurmuş da öyle işte.
 // DETACH Seçilen şeyin tüm ilişkilerini sil.
